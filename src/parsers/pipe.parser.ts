@@ -18,7 +18,7 @@ export class PipeParser extends AbstractTemplateParser implements ParserInterfac
 		const regExp: RegExp = /(['"`])((?:(?!\1).|\\\1)+)\1\s*\|\s*translate: (['"`])((?:(?!\3).|\\\3)+)/g;
 		let matches: RegExpExecArray;
 		while (matches = regExp.exec(template)) {
-			collection = collection.add(matches[2].split('\\\'').join('\''), (matches[4]);
+			collection = collection.add(matches[2].split('\\\'').join('\''), matches[4]);
 		}
 
 		return collection;
